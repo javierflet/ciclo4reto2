@@ -1,0 +1,11 @@
+com/as/repository/UserRepository.class
+com/as/model/Accessory.class
+com/as/controller/AccessoryController.class
+com/as/repository/crud/UserCrudRepository.class
+com/as/model/User.class
+com/as/service/UserService.class
+com/as/controller/UserController.class
+com/as/repository/crud/AccessoryCrudRepository.class
+com/as/service/AccesoryService.class
+com/as/repository/AccessoryRepository.class
+com/as/DemoApplication.class

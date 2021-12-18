@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Inicio</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, inicial-scale=1"/>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="header d-flex" id="menu">
+        <div class=""><a><img id="photo"> <span id="user"></span></a></div>
+        <div class="">
+            <a href="menu.html">Menu</a>
+            <a href="javascript:cerrar()">Salir</a>
+        </div>
+    </div>
+<header>
+    <h1 id="header">Operaciones Usuario</h1>
+</header>
+
+<nav>
+</nav>
+
+<section class="container" >
+    <div class="card" id="bienvenido">
+        <div id="resultado">
+        </div>
+        
+
+        <h4 id="validarCampos" class="text-center" style="color: rgba(255, 255, 255, 0.767)"><span>&#160</span></h4>
+        <div class="mb-10px d-flex text-center" id="lista-user">
+            <input class="datos-user" id="id" type="number" placeholder="Id" required maxlength="15" hidden>
+            <input class="datos-user" id="identification" type="number" placeholder="Identificación" required maxlength="15">
+            <input class="datos-user" id="name" type="text" placeholder="Nombre completo" required maxlength="80" >
+            <input class="datos-user" id="address" type="text" placeholder="Dirección" required maxlength="80" >
+            <input class="datos-user" id="cellPhone" type="number" placeholder="Celular" required maxlength="80" >
+            <input class="datos-user" id="email" type="email" placeholder="Correo" required maxlength="50" pattern=".+@+.+">
+            <input class="datos-user" id="password" type="password" placeholder="Contraseña" required maxlength="50">
+            <input class="datos-user" id="confirmar" type="password" placeholder="Confirmar contraseña" required maxlength="50" >
+            <input class="datos-user" id="zone" type="text" placeholder="Zona" required maxlength="80" >
+            <select id="type">
+                <option value='null' id='select-type' >Selecione una opción</option>
+                <option value='ADM' id='select-ADM'>Administrador</option>
+                <option value='USER' id='select-USER'>Usuario</option>
+                <option value='ASESOR' id='select-ASESOR'>Asesor comercial</option>
+                <option value='COORDINADOR' id='select-COORDINADOR'>Coordinador de zona</option>
+            </select>
+
+        </div>
+        <diV class="text-center">
+            <button class="btn-info btn-gradient mb-10px mr-10px" id="btn-guardar" onclick="validar2(1)">Registrar Usuario</button>
+            <button class="btn-info btn-gradient mb-10px" id="btn-actualizar" onclick="validar2(2)">Actualizar Registro Usuario</button>
+        </diV>
+    </div>
+
+</section>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/registro/registro.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            
+</body>
+<script>
+    $("#btn-actualizar").hide();
+    traerInformacion();
+    $('#link').click(function(event){
+        crearCuenta();
+    return false; 
+    });
+
+    let firstData = null;
+    //console.log(localStorage.getItem("object_name"))
+    if(localStorage.getItem("object_name")!=null){
+        let myData = localStorage.getItem("object_name");
+        //localStorage.removeItem( 'object_name' ); // Clear the localStorage
+        firstData = JSON.parse(myData);
+        if(firstData.type=="ADM"){
+            $("#user").html(firstData.name);
+        }else{
+            cerrar();
+        }
+    }else{
+        cerrar()
+    }
+
+    function cerrar(){
+        $(document).ready(function(){
+            localStorage.removeItem( 'object_name' );
+            $(location).attr('href',"admin.html");
+        });
+        console.log("entro aqui")
+    }
+</script>
+</html>

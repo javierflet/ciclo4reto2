@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Inicio</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, inicial-scale=1"/>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="header d-flex" id="menu">
+        <div class=""><a><img id="photo"> <span id="user"></span></a></div>
+        <div class="">
+            <a href="index.html" >Usuario</a>
+            <a href="coordinador.html">Coordinador</a>
+            <a href="admin.html" class="active">Administrador</a>
+        </div>
+    </div>
+<header>
+
+    <h1 id="header">Iniciar sesion administrador</h1>
+</header>
+
+<nav>
+</nav>
+
+<section class="container" >
+    <div class="card" id="bienvenido">
+        <div id="resultado">
+        </div>
+        
+
+        <h4 id="validarCampos" class="text-center" style="color: rgba(255, 255, 255, 0.767)"><span>&#160</span></h4>
+        <div class="mb-10px d-flex text-center" id="lista-clothe">
+            <input class="datos-user" id="email" type="email" placeholder="Correo" required maxlength="50" pattern=".+@+.+">
+            <input class="datos-user" id="password" type="password" placeholder="Contraseña" required maxlength="50">
+        </div>
+        <diV class="text-center">
+            <button class="btn-info btn-gradient mb-10px mr-10px" id="btn-consultar" onclick="validar()">Ingresar</button>
+            
+        </diV>
+    </div>
+
+</section>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/menu/menu.js"></script>
+            
+</body>
+<script>
+    $("#btn-guardar").hide();
+    $("#btn-consultar").attr("disabled","disabled");
+    $('#link').click(function(event){
+        crearCuenta();
+    return false; 
+    });
+</script>
+</html>
